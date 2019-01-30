@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: streams-kafka-counting
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: test-counting
+        output:
+          destination: test-counting-out
+      kafka:
+        streams:
+          binder:
+            brokers: localhost:9092
+            configuration:
+              default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
